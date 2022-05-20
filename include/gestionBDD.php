@@ -16,7 +16,7 @@ function connexionBDD()
 {
     $PARAM_hote='sql4.freemysqlhosting.net'; // le chemin vers le serveur
     $PARAM_port='3306';
-    $PARAM_nom_bd='sql4493857'; // le nom de votre base de données
+    $PARAM_nom_bd='sql449387'; // le nom de votre base de données
     $PARAM_utilisateur='sql4493857'; // nom d'utilisateur pour se connecter
     $PARAM_mot_passe='1nf2pURsCZ'; // mot de passe de l'utilisateur pour se connecter
     $connect = new PDO('mysql:host='.$PARAM_hote.';port='.$PARAM_port.';dbname='.$PARAM_nom_bd, $PARAM_utilisateur, $PARAM_mot_passe);
