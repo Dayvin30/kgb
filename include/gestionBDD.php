@@ -14,7 +14,7 @@
  */
 function connexionBDD() 
 {
-    $PARAM_hote='sql4.freemysqlhosting.net'; // le chemin vers le serveur
+    $PARAM_hote=''; // le chemin vers le serveur
     $PARAM_port='3306';
     $PARAM_nom_bd='sql'; // le nom de votre base de données
     $PARAM_utilisateur='sql'; // nom d'utilisateur pour se connecter
