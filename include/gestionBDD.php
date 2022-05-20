@@ -133,7 +133,7 @@ function ModifierCibles($id, $Nom, $Prenom, $Birthday, $Nationalite)
     $reponse->execute([$id, $Nom, $Prenom ,$Birthday, $Nationalite]);
 
     $message= '<br> <div style="text-align:center"> <span class="badge bg-success" style="font-size: 115%" >Modification enregistré !</span> </div>';
-        
+        var_dump($Prenom);
         }
 
 function ModifierContacts($id, $Nom, $Prenom, $Birthday, $Nationalite)
