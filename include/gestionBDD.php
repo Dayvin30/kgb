@@ -14,12 +14,12 @@
  */
 function connexionBDD() 
 {
-    $PARAM_hote='eu-cdbr-west-02.cleardb.net'; // le chemin vers le serveur
-    $PARAM_port='3306';
-    $PARAM_nom_bd='heroku_f9d508c2c823bbf'; // le nom de votre base de données
-    $PARAM_utilisateur='b64fabd471154f'; // nom d'utilisateur pour se connecter
-    $PARAM_mot_passe='c3d7baba'; // mot de passe de l'utilisateur pour se connecter
-    $connect = new PDO('mysql:host='.$PARAM_hote.';port='.$PARAM_port.';dbname='.$PARAM_nom_bd, $PARAM_utilisateur, $PARAM_mot_passe);
+  $PARAM_hote='185.221.182.46'; // le chemin vers le serveur
+  $PARAM_port='3306';
+  $PARAM_nom_bd='mvypcnkf_bdd'; // le nom de votre base de données
+  $PARAM_utilisateur='mvypcnkf_root'; // nom d'utilisateur pour se connecter
+  $PARAM_mot_passe='Q^lP4~e4lqJSl@8^4l'; // mot de passe de l'utilisateur pour se connecter
+  $connect = new PDO('mysql:host='.$PARAM_hote.';port='.$PARAM_port.';dbname='.$PARAM_nom_bd, $PARAM_utilisateur, $PARAM_mot_passe);
     
     //mysql://b64fabd471154f:c3d7baba@eu-cdbr-west-02.cleardb.net/heroku_f9d508c2c823bbf?reconnect=true
     return $connect;
