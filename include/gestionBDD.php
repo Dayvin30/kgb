@@ -129,7 +129,7 @@ function ModifierCibles($id, $Nom, $Prenom, $Birthday, $Nationalite)
     $connexion=connexionBDD();
 
      
-    $requete='update cibles set nom = :nom, prenom= :prenom,birthday= :birthday,nationalite= :Nationalite where nom_de_code = :id;';
+    $requete='update cibles set nom = :nom, prenom= :prenom,birthday= :birthday,nationalite= :nationalite where nom_de_code = :id;';
     echo($requete);
     
    
