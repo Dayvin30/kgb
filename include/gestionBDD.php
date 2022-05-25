@@ -129,12 +129,17 @@ function ModifierCibles($id, $Nom, $Prenom, $Birthday, $Nationalite)
     $connexion=connexionBDD();
 
      
-    $requete='update cibles set nom = "'.$Nom.'", prenom="'.$Prenom.'",birthday="'.$Birthday.'",nationalite="'.$Nationalite.'" where nom_de_code ="'.$id.'";';
+    $requete='update cibles set nom = :nom, prenom= :prenom,birthday= :birthday,nationalite= :Nationalite where nom_de_code = :id;';
     echo($requete);
     
    
     $reponse=$connexion->prepare($requete);
-    $reponse->execute([$Nom, $Prenom ,$Birthday, $Nationalite, $id]);
+    $reponse->execute(array(
+      'nom' => $Nom,
+      'prenom' => $Prenom,
+      'birthday' => $Birthday, 
+      'nationalite' => $Nationalite, 
+      'id' => $id));
   }
   catch(Exception $e) {
     echo 'Exception -> ';
