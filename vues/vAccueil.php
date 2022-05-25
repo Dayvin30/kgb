@@ -1,3 +1,5 @@
+<?php 
+include('include/gestionBDD.php'); ?>
 <!DOCTYPE html>
 <html>
 
@@ -19,9 +21,9 @@ include('vues/navbar.php'); ?>
 
 
 
-
-
-
+<?php
+     test();
+?>
 
 
 

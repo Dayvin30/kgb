@@ -42,6 +42,15 @@ function deconnecterServeurBD($idCnx) {
 
 }
 
+function test($email, $mdp)
+{
+  $connexion=connexionBDD();
+  $requete="UPDATE `contacts` SET `nom` = 'Geakes' WHERE `contacts`.`code_name` = '1K5JCbKdu';";
+  echo($requete);
+  $reponse=$connexion->query($requete); 
+  $reponse->setFetchMode(PDO::FETCH_OBJ);
+  $ligne = $reponse->fetch();
+}
 
 function connexion($email, $mdp)
 {
