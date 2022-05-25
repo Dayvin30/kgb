@@ -134,7 +134,7 @@ function ModifierCibles($id, $Nom, $Prenom, $Birthday, $Nationalite)
     
    
     $reponse=$connexion->prepare($requete);
-    $reponse->execute([$id, $Nom, $Prenom ,$Birthday, $Nationalite]);
+    $reponse->execute([$Nom, $Prenom ,$Birthday, $Nationalite, $id]);
   }
   catch(Exception $e) {
     echo 'Exception -> ';
