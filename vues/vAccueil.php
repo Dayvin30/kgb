@@ -23,6 +23,7 @@ include('vues/navbar.php'); ?>
 
 <?php
      test();
+     echo "abc";
 ?>
 
 
