@@ -20,6 +20,9 @@ function connexionBDD()
   $PARAM_utilisateur='b64fabd471154f'; // nom d'utilisateur pour se connecter
   $PARAM_mot_passe='c3d7baba'; // mot de passe de l'utilisateur pour se connecter
   $connect = new PDO('mysql:host='.$PARAM_hote.';port='.$PARAM_port.';dbname='.$PARAM_nom_bd, $PARAM_utilisateur, $PARAM_mot_passe);
+
+  $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $connect->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     
     //mysql://b64fabd471154f:c3d7baba@eu-cdbr-west-02.cleardb.net/heroku_f9d508c2c823bbf?reconnect=true
     return $connect;
@@ -42,15 +45,6 @@ function deconnecterServeurBD($idCnx) {
 
 }
 
-function test($email, $mdp)
-{
-  $connexion=connexionBDD();
-  $requete="UPDATE `contacts` SET `nom` = 'Geakes' WHERE `contacts`.`code_name` = '1K5JCbKdu';";
-  echo($requete);
-  $reponse=$connexion->query($requete); 
-  $reponse->setFetchMode(PDO::FETCH_OBJ);
-  $ligne = $reponse->fetch();
-}
 
 function connexion($email, $mdp)
 {
@@ -131,7 +125,8 @@ function ModifierAgent($id, $Nom, $Prenom, $Birthday, $Nationalite, $Specialite)
   
 function ModifierCibles($id, $Nom, $Prenom, $Birthday, $Nationalite)
 {
-  $connexion=connexionBDD();
+  try {
+    $connexion=connexionBDD();
 
      
     $requete='update cibles set nom = "'.$Nom.'", prenom="'.$Prenom.'",birthday="'.$Birthday.'",nationalite="'.$Nationalite.'" where nom_de_code ="'.$id.'";';
@@ -140,6 +135,12 @@ function ModifierCibles($id, $Nom, $Prenom, $Birthday, $Nationalite)
    
     $reponse=$connexion->prepare($requete);
     $reponse->execute([$id, $Nom, $Prenom ,$Birthday, $Nationalite]);
+  }
+  catch(Exception $e) {
+    echo 'Exception -> ';
+    var_dump($e->getMessage());
+}
+  
 
     $message= '<br> <div style="text-align:center"> <span class="badge bg-success" style="font-size: 115%" >Modification enregistré !</span> </div>';
         
