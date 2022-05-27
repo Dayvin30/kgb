@@ -244,19 +244,21 @@ function ModifierMissions($Titre, $Description, $Code_name, $Pays, $TypeMission,
         }
 
 
-function SupprimerFromTable($id)
+function SupprimerFromTable($NomTable, $idTable, $id)
 {
 
   $connexion=connexionBDD();
 
 
 
-$requete='delete from agents where id_code = 55555;'; 
+$requete='delete from :table where :idTable = :id;'; 
 echo($requete);
 
 
 $reponse=$connexion->prepare($requete);
 $reponse->execute(array(
+  'table' => $NomTable,
+  'idTable' => $idTable,
   'id' => $id
 
 ));
