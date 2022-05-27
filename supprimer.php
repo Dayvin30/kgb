@@ -17,7 +17,7 @@ if(isset($_POST['id']) )
     if($_GET['type']=='un agent')
     {
         SupprimerFromTable("agents", "id_code", $_POST['id']);
-        echo($_POST['id']);
+        var_dump($_POST['id']);
     }
     if($_GET['type']=='une cible') {
 
