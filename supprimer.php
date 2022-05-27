@@ -23,7 +23,7 @@ if(isset($_POST['id']) )
         
         
         
-        SupprimerCible("cibles", "nom_de_code", $_POST['id']);
+        SupprimerCible($_POST['id']);
         }
 
         if($_GET['type']=='un contact') {
@@ -31,7 +31,7 @@ if(isset($_POST['id']) )
         
         
         
-            SupprimerContact("contacts", "code_name", $_POST['id']);
+            SupprimerContact($_POST['id']);
         }
 
         if($_GET['type']=='une mission') {
@@ -39,7 +39,7 @@ if(isset($_POST['id']) )
         
         
         
-            SupprimerMission("missions", "titre", $_POST['id']);
+            SupprimerMission($_POST['id']);
         }
 
 
