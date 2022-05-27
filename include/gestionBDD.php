@@ -121,7 +121,7 @@ function ModifierAgent($id, $Nom, $Prenom, $Birthday, $Nationalite, $Specialite)
 
      
     $requete='update agents set nom = :nom, prenom= :prenom, birthday= :birthday ,nationalite= :nationalite ,specialite= :specialite where id_code = :id;';
-    
+    echo($requete);
    
     $reponse=$connexion->prepare($requete);
     $reponse->execute(array(
