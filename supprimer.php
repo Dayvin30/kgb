@@ -41,6 +41,10 @@ if(isset($_POST['id']) )
         
             SupprimerMission($_POST['id']);
         }
+        if($_GET['type']=='une planque')
+        {
+            SupprimerPlanque($_POST['id']);
+        }
 
 
     }
