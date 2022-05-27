@@ -64,7 +64,18 @@ if($_GET['type'] == "un contact")
 }
 
 
+if($_GET['type'] == "une mission")
+{
+    include('vues/vAjouterMission.php');
+    if(isset($_POST['Titre']) && isset($_POST['Description']) && isset($_POST['Code_name']) && isset($_POST['Pays']) && isset($_POST['Type_de_mission']) && isset($_POST['Statut']))  //tous les champs sont remplis
+        {
 
+
+            ajouterMissions($_POST['Titre'], $_POST['Description'], $_POST['Code_name'], $_POST['Pays'], $_POST['Type_de_mission'], $_POST['Statut'],, $_POST['Specialite'], $_POST['DateDebut'], $_POST['DateFin'], $_POST['Statut'], $_POST['Contact'],, $_POST['Cible'], $_POST['Planque']);
+
+
+        }
+}
 
 
 }
