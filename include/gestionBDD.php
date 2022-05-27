@@ -95,11 +95,19 @@ function ModifierTable($NomTable, $NomColonne, $idColonne, $value, $id)
   }
     else {
      
-    $requete='update '.$NomTable.' set '.$NomColonne.' = "'.$value.'" where '.$idColonne.'='.$id.';';
+    $requete='update :NomTable set :NomColonne = :value where :idColonne= :id;';
     
    
     $reponse=$connexion->prepare($requete);
-    $reponse->execute([$NomTable, $NomColonne, $idColonne ,$value]);
+    $reponse->execute(array(
+
+      'nomTable' => $NomTable,
+      'NomColonne' => $NomColonne,
+      'value' => $value,
+      'idColone' => $idColonne,
+      'id' => $id
+      
+    ));
 
     $message= '<br> <div style="text-align:center"> <span class="badge bg-success" style="font-size: 115%" >Modification enregistré !</span> </div>';
         
@@ -112,12 +120,20 @@ function ModifierAgent($id, $Nom, $Prenom, $Birthday, $Nationalite, $Specialite)
   $connexion=connexionBDD();
 
      
-    $requete='update agents set nom = "'.$Nom.'", prenom="'.$Prenom.'",birthday="'.$Birthday.'",nationalite="'.$Nationalite.'",specialite="'.$Specialite.'" where id_code ="'.$id.'";';
-    echo($requete);
+    $requete='update agents set nom = :nom, prenom= :prenom, birthday= :birthday ,nationalite= :nationalite ,specialite= :specialite where id_code = :id;';
     
    
     $reponse=$connexion->prepare($requete);
-    $reponse->execute([$id, $Nom, $Prenom ,$Birthday, $Nationalite, $Specialite]);
+    $reponse->execute(array(
+      'nom' => $Nom,
+      'prenom' => $Prenom,
+      'birthday' => $Birthday, 
+      'nationalite' => $Nationalite, 
+      'specialite' => $Specialite,
+      'id' => $id)
+
+
+    );
 
     $message= '<br> <div style="text-align:center"> <span class="badge bg-success" style="font-size: 115%" >Modification enregistré !</span> </div>';
         
@@ -126,12 +142,9 @@ function ModifierAgent($id, $Nom, $Prenom, $Birthday, $Nationalite, $Specialite)
 function ModifierCibles($id, $Nom, $Prenom, $Birthday, $Nationalite)
 {
   try {
-    $connexion=connexionBDD();
-
-     
-    $requete='update cibles set nom = :nom, prenom= :prenom,birthday= :birthday,nationalite= :nationalite where nom_de_code = :id;';
-    echo($requete);
     
+    $connexion=connexionBDD();
+    $requete='update cibles set nom = :nom, prenom= :prenom,birthday= :birthday,nationalite= :nationalite where nom_de_code = :id;';
    
     $reponse=$connexion->prepare($requete);
     $reponse->execute(array(
@@ -174,12 +187,17 @@ function ModifierPlanques($Code, $Adresse, $Pays, $Type)
   $connexion=connexionBDD();
 
      
-    $requete='update planques set adresse = "'.$Adresse.'", pays="'.$Pays.'",type="'.$Type.'" where codes ="'.$Code.'";';
+    $requete='update planques set adresse = :adresse, pays= :pays ,type= :type where codes = :code;';
     echo($requete);
     
    
     $reponse=$connexion->prepare($requete);
-    $reponse->execute([$Adresse, $Pays, $Type ,$Code]);
+    $reponse->execute(array(
+      'adresse' => $Adresse,
+      'pays' => $Pays,
+      'type' => $Type, 
+      'code' => $Code
+    ));
 
     $message= '<br> <div style="text-align:center"> <span class="badge bg-success" style="font-size: 115%" >Modification enregistré !</span> </div>';
         
@@ -191,12 +209,25 @@ function ModifierMissions($Titre, $Description, $Code_name, $Pays, $TypeMission,
   $connexion=connexionBDD();
 
      
-    $requete='update missions set description = "'.$Description.'", code_name="'.$Code_name.'",Pays="'.$Pays.'" ,type_de_mission="'.$TypeMission.'" ,statut="'.$Statut.'" ,specialite="'.$Specialite.'" ,date_debut="'.$DateDebut.'" ,date_fin="'.$DateFin.'" ,id_agents="'.$Id_agent.'" ,contacts="'.$Contacts.'" ,cibles="'.$Cibles.'" where titre ="'.$Titre.'";';
-    echo($requete);
+    $requete='update missions set description = :description, code_name= :code_name ,Pays= :pays ,type_de_mission= :TypeMission ,statut= :statut ,specialite= :specialite ,date_debut= :DateDebut ,date_fin= :DateFin ,id_agents= :id_agents ,contacts= :contacts ,cibles= :cibles where titre = :titre;';
+
     
    
     $reponse=$connexion->prepare($requete);
-    $reponse->execute([$Titre, $Description, $Code_name, $Pays, $TypeMission, $Statut, $Specialite, $DateDebut, $DateFin, $Id_agent, $Contacts, $Cibles, $Planques]);
+    $reponse->execute(array(
+      'description' => $Description,
+      'code_name' => $Code_name,
+      'pays' => $Pays, 
+      'TypeMission' => $TypeMission, 
+      'statut' => $Statut,
+      'specialite' => $Specialite,
+      'DateDebut' => $DateDebut,
+      'DateFin' => $DateFin,
+      'id_agents' => $Id_agent,
+      'contacts' => $Contacts,
+      'cibles' => $Cibles,
+      'titre' => $Titre
+    ));
 
     $message= '<br> <div style="text-align:center"> <span class="badge bg-success" style="font-size: 115%" >Modification enregistré !</span> </div>';
         
@@ -210,12 +241,17 @@ function SupprimerFromTable($NomTable, $idTable, $id)
 
 
 
-$requete='delete from '.$NomTable.' where '.$idTable.' = "'.$id.'";'; 
+$requete='delete from :table where :idTable = :id;'; 
 echo($requete);
 
 
 $reponse=$connexion->prepare($requete);
-$reponse->execute([$NomTable, $idTable, $id]);
+$reponse->execute(array(
+  'table' => $NomTable,
+  'idTable' => $idTable,
+  'id' => $id
+
+));
 
  }
 
@@ -403,11 +439,18 @@ $reponse->execute([$NomTable, $idTable, $id]);
       if($reponse->rowCount()==0){
   
    
-        $requete='insert into agents (id_code, nom, prenom, birthday, nationalite, specialite) VALUES ("'.$id_code.'", "'.$nom.'", "'.$prenom.'", "'.$birthday.'", "'.$nationalite.'" ,  "'.$specialite.'");';
+        $requete='insert into agents (id_code, nom, prenom, birthday, nationalite, specialite) VALUES (:id_code, :nom , :prenom, :birthday, :nationalite , :specialite);';
         echo($requete);
   
         $reponse=$connexion->prepare($requete);
-        $reponse->execute([$id_code, $nom, $prenom, $birthday, $nationalite, $specialite]);
+        $reponse->execute(array(
+          'id_code' => $id_code,
+          'nom' => $nom,
+          'prenom' => $prenom,
+          'birthday' => $birthday,
+          'nationalite' => $nationalite,
+          'specialite' => $specialite
+        ));
      
         
       }
@@ -426,11 +469,22 @@ $reponse->execute([$NomTable, $idTable, $id]);
       if($reponse->rowCount()==0){
   
    
-        $requete='insert into cibles (nom_de_code, nom, prenom, birthday, nationalite) VALUES ("'.$nom_de_code.'", "'.$nom.'", "'.$prenom.'", "'.$birthday.'", "'.$nationalite.'");';
+        $requete='insert into cibles (nom_de_code, nom, prenom, birthday, nationalite) VALUES (:nom_de_code, :nom, :prenom, :birthday, :nationalite);';
         echo($requete);
   
         $reponse=$connexion->prepare($requete);
-        $reponse->execute([$nom_de_code, $nom, $prenom, $birthday, $nationalite]);
+        $reponse->execute(array(
+
+          'nom_de_code' => $nom_de_code,
+          'nom' => $nom,
+          'prenom' => $prenom,
+          'birthday' => $birthday,
+          'nationalite' => $nationalite
+          
+
+
+
+        ));
      
         
       }
@@ -449,11 +503,17 @@ $reponse->execute([$NomTable, $idTable, $id]);
       if($reponse->rowCount()==0){
   
    
-        $requete='insert into contacts (code_name, nom, prenom, birthday, nationalite) VALUES ("'.$code_name.'", "'.$nom.'", "'.$prenom.'", "'.$birthday.'", "'.$nationalite.'");';
+        $requete='insert into contacts (code_name, nom, prenom, birthday, nationalite) VALUES (:code_name, :nom, :prenom, :birthday, :nationalite);';
         echo($requete);
   
         $reponse=$connexion->prepare($requete);
-        $reponse->execute([$code_name, $nom, $prenom, $birthday, $nationalite]);
+        $reponse->execute(array(
+         'code_name' => $code_name,
+         'nom' => $nom,
+         'prenom' => $prenom,
+         'birthday' => $birthday,
+         'nationalite' => $nationalite 
+        ));
      
         
       }
@@ -472,10 +532,16 @@ $reponse->execute([$NomTable, $idTable, $id]);
       if($reponse->rowCount()==0){
   
    
-        $requete='insert into planques (codes, adresse, pays, $type) VALUES ("'.$code_name.'", "'.$nom.'", "'.$codes.'", "'.$adresse.'", "'.$pays.'", "'.$type.'");';
+        $requete='insert into planques (codes, adresse, pays, type) VALUES (:codes, :adresse, :pays, :type);';
   
         $reponse=$connexion->prepare($requete);
-        $reponse->execute([$codes, $adresse, $pays, $type]);
+        $reponse->execute(array(
+          'codes' => $codes,
+          'adresse' => $adresse,
+          'pays' => $pays,
+          'type' => $type
+
+        ));
      
         
       }
@@ -494,11 +560,23 @@ $reponse->execute([$NomTable, $idTable, $id]);
       if($reponse->rowCount()==0){
   
    
-        $requete='insert into missions (titre, description, code_name, pays, type_de_missions, statut, specialite, date_debut, date_fin, id_agents, contacts, cibles, planques) VALUES ("'.$titre.'", "'.$description.'", "'.$date_debut.'", "'.$date_fin.'", "'.$id_agents.'", "'.$contacts.'", "'.$cibles.'", "'.$planques.'");';
-        echo($requete);
+        $requete='insert into missions (titre, description, code_name, pays, type_de_missions, statut, specialite, date_debut, date_fin, id_agents, contacts, cibles, planques) VALUES (:titre, :description, :code_name, :type_de_mission, :statut, :specialite, :DateDebut, :DateFin, :id_agents, :contacts, :cibles, :planques);';
   
         $reponse=$connexion->prepare($requete);
-        $reponse->execute([$titre, $description, $code_name, $pays, $type_de_mission, $statut, $specialite, $date_debut, $date_fin, $id_agents, $contatcs, $cibles, $planques]);
+        $reponse->execute(array(
+        'titre' => $titre, 
+        'description' => $description, 
+        'code_name' => $code_name,
+        'type_de_mission' => $type_de_mission,
+        'statut' => $statut,
+        'specialite' => $specialite,
+        'DateDebut' => $date_debut,
+        'DateFin' => $date_fin,
+        'id_agents' => $id_agents,
+        'contacts '=> $contacts,
+        'cibles' => $cibles,
+        'planques' => $planques
+        ));
      
         
       }
