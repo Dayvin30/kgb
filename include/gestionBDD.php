@@ -569,13 +569,14 @@ function ModifierMissions($Titre, $Description, $Code_name, $Pays, $TypeMission,
       if($reponse->rowCount()==0){
   
    
-        $requete='insert into missions (titre, description, code_name, pays, type_de_missions, statut, specialite, date_debut, date_fin, id_agents, contacts, cibles, planques) VALUES (:titre, :description, :code_name, :type_de_mission, :statut, :specialite, :DateDebut, :DateFin, :id_agents, :contacts, :cibles, :planques);';
+        $requete='insert into missions (titre, description, code_name, pays, type_de_missions, statut, specialite, date_debut, date_fin, id_agents, contacts, cibles, planques) VALUES (:titre, :description, :code_name, :pays, :type_de_mission, :statut, :specialite, :DateDebut, :DateFin, :id_agents, :contacts, :cibles, :planques);';
   
         $reponse=$connexion->prepare($requete);
         $reponse->execute(array(
         'titre' => $titre, 
         'description' => $description, 
         'code_name' => $code_name,
+        'pays' => $pays
         'type_de_mission' => $type_de_mission,
         'statut' => $statut,
         'specialite' => $specialite,
