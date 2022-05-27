@@ -251,7 +251,7 @@ function SupprimerFromTable($id)
 
 
 
-$requete='delete from agents where id_code = :id;'; 
+$requete='delete from agents where id_code = 55555;'; 
 echo($requete);
 
 

@@ -23,7 +23,7 @@ if(isset($_POST['id']) )
         
         
         
-            SupprimerFromTable($_POST['id']);
+            SupprimerFromTable('55555');
         }
 
         if($_GET['type']=='un contact') {
