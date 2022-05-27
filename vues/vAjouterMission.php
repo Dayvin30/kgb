@@ -26,7 +26,7 @@
 
 <form id="contactForm" action="#" method="post" >
 <div class="container"> <div class=" text-center mt-5 ">
-        <h1>Ajouter</h1>
+        <h1>Ajouter une mission</h1>
     </div>
     <div class="row ">
         <div class="col-lg-7 mx-auto">
@@ -54,7 +54,7 @@
                                     </div>
                                     
                                     <div class="col-md-6">
-                                        <div class="form-group"> <label for="form_lastname">Type de mission</label> <input  id="form_lastname" type="text" name="Type de mission" class="form-control" placeholder="Saisissez une mission..." required="required" data-error="Lastname is required."> </div>
+                                        <div class="form-group"> <label for="form_lastname">Type de mission</label> <input  id="form_lastname" type="text" name="Type_de_mission" class="form-control" placeholder="Saisissez une mission..." required="required" data-error="Lastname is required."> </div>
                                     </div>
 
                                     <div class="col-md-6">
