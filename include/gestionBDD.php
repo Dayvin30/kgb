@@ -169,12 +169,22 @@ function ModifierContacts($id, $Nom, $Prenom, $Birthday, $Nationalite)
   $connexion=connexionBDD();
 
      
-    $requete='update contacts set nom = "'.$Nom.'", prenom="'.$Prenom.'",birthday="'.$Birthday.'",nationalite="'.$Nationalite.'" where code_name ="'.$id.'";';
+    $requete='update contacts set nom = :Nom, prenom= :Prenom ,birthday= :Birthday, nationalite= :Nationalite where code_name =:id ;';
     echo($requete);
     
    
     $reponse=$connexion->prepare($requete);
-    $reponse->execute([$id, $Nom, $Prenom ,$Birthday, $Nationalite]);
+    $reponse->execute(array(
+
+      'Nom' => $Nom,
+      'Prenom' => $Prenom,
+      'Birthday' => $Birthday,
+      'Nationalite' => $Nationalite,
+      'id' => $id
+
+
+
+    ));
 
     $message= '<br> <div style="text-align:center"> <span class="badge bg-success" style="font-size: 115%" >Modification enregistré !</span> </div>';
         
