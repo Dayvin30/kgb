@@ -71,7 +71,7 @@ if($_GET['type'] == "une mission")
         {
 
 
-            ajouterMissions($_POST['Titre'], $_POST['Description'], $_POST['Code_name'], $_POST['Pays'], $_POST['Type_de_mission'], $_POST['Statut'],, $_POST['Specialite'], $_POST['DateDebut'], $_POST['DateFin'], $_POST['Statut'], $_POST['Contact'],, $_POST['Cible'], $_POST['Planque']);
+            ajouterMissions($_POST['Titre'], $_POST['Description'], $_POST['Code_name'], $_POST['Pays'], $_POST['Type_de_mission'], $_POST['Statut'], $_POST['Specialite'], $_POST['DateDebut'], $_POST['DateFin'], $_POST['Statut'], $_POST['Contact'], $_POST['Cible'], $_POST['Planque']);
 
 
         }
