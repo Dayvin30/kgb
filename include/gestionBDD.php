@@ -556,7 +556,7 @@ function ModifierMissions($Titre, $Description, $Code_name, $Pays, $TypeMission,
       }
    }
 
-   function ajouterMissions($titre, $description, $code_name, $pays, $type_de_mission, $statut, $specialite, $date_debut, $date_fin, $id_agents, $contatcs, $cibles, $planques)
+   function ajouterMissions($titre, $description, $code_name, $pays, $type_de_mission, $statut, $specialite, $date_debut, $date_fin, $id_agents, $contacts, $cibles, $planques)
    {
     $connexion=connexionBDD();
 
