@@ -38,29 +38,50 @@
                                 <div class="row">
 
                                 <div class="col-md-6">
-                                        <div class="form-group"> <label for="form_lastname">Identifiant</label> <input  id="form_lastname" type="text" name="id_code" class="form-control" placeholder="Saisissez un identidiant..."   required="required" data-error="Lastname is required."> </div>
+                                        <div class="form-group"> <label for="form_lastname">Titre</label> <input  id="form_lastname" type="text" name="Titre" class="form-control" placeholder="Saisissez un titre..."   required="required" data-error="Lastname is required."> </div>
                                     </div>
 
                                     <div class="col-md-6">
-                                        <div class="form-group"> <label for="form_name">Prénom</label> <input id="form_name" type="text" name="Prenom" class="form-control" placeholder="Saisissez un prénom..." required="required" data-error="Firstname is required."> </div>
+                                        <div class="form-group"> <label for="form_name">Description</label> <input id="form_name" type="text" name="Description" class="form-control" placeholder="Saisissez une description..." required="required" data-error="Firstname is required."> </div>
                                     </div>
                                     
                                     <div class="col-md-6">
-                                        <div class="form-group"> <label for="form_lastname">Nom</label> <input  id="form_lastname" type="text" name="Nom" class="form-control" placeholder="Saisissez un nom..."   required="required" data-error="Lastname is required."> </div>
+                                        <div class="form-group"> <label for="form_lastname">Nom de code</label> <input  id="form_lastname" type="text" name="Code_name" class="form-control" placeholder="Saisissez un nom de code..."   required="required" data-error="Lastname is required."> </div>
                                     </div>
                                     
                                     <div class="col-md-6">
-                                        <div class="form-group"> <label for="form_name">Date de naissance</label> <input id="form_name" type="text" name="Birthday" class="form-control" placeholder="yyyy/mm/dd" required="required" data-error="Firstname is required."> </div>
+                                        <div class="form-group"> <label for="form_name">Pays</label> <input id="form_name" type="text" name="Pays" class="form-control" placeholder="Saisissez un pays" required="required" data-error="Firstname is required."> </div>
                                     </div>
                                     
                                     <div class="col-md-6">
-                                        <div class="form-group"> <label for="form_lastname">Nationalité</label> <input  id="form_lastname" type="text" name="Nationalite" class="form-control" placeholder="Saisissez une nationalité..." required="required" data-error="Lastname is required."> </div>
+                                        <div class="form-group"> <label for="form_lastname">Type de mission</label> <input  id="form_lastname" type="text" name="Type de mission" class="form-control" placeholder="Saisissez une mission..." required="required" data-error="Lastname is required."> </div>
                                     </div>
 
                                     <div class="col-md-6">
-                                        <div class="form-group"> <label for="form_lastname">Spécialité</label> <input  id="form_lastname" type="text" name="Specialite" class="form-control" placeholder="Saisissez une spécialité..." required="required" data-error="Lastname is required."> </div>
+                                        <div class="form-group"> <label for="form_lastname">Statut</label> <input  id="form_lastname" type="text" name="Statut" class="form-control" placeholder="Saisissez un statut..." required="required" data-error="Lastname is required."> </div>
                                     </div>
                                     
+                                    <div class="col-md-6">
+                                        <div class="form-group"> <label for="form_lastname">Specialite</label> <input  id="form_lastname" type="text" name="Specialite" class="form-control" placeholder="Saisissez une spécialité..." required="required" data-error="Lastname is required."> </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group"> <label for="form_lastname">Date de début</label> <input  id="form_lastname" type="text" name="DateDebut" class="form-control" placeholder="Date de début..." required="required" data-error="Lastname is required."> </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group"> <label for="form_lastname">Date de fin</label> <input  id="form_lastname" type="text" name="DateFin" class="form-control" placeholder="Date de fin..." required="required" data-error="Lastname is required."> </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group"> <label for="form_lastname">Agent</label> <input  id="Agent" type="text" name="Statut" class="form-control" placeholder="Saisissez un agent..." required="required" data-error="Lastname is required."> </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group"> <label for="form_lastname">Contact</label> <input  id="form_lastname" type="text" name="Contact" class="form-control" placeholder="Saisissez un contact..." required="required" data-error="Lastname is required."> </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group"> <label for="form_lastname">Cible</label> <input  id="form_lastname" type="text" name="Cible" class="form-control" placeholder="Saisissez une cible..." required="required" data-error="Lastname is required."> </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group"> <label for="form_lastname">Planque</label> <input  id="form_lastname" type="text" name="Planque" class="form-control" placeholder="Saisissez une planque..." required="required" data-error="Lastname is required."> </div>
+                                    </div>
                                     
                                     
                                 </div>
@@ -69,7 +90,7 @@
                                     <div class="col-md-12">
                                         <br>
                                     </div>
-                                    <div class="col-md-12"><input type="submit" class="btn btn-primary" value="Enregistrer l'agent"></div>
+                                    <div class="col-md-12"><input type="submit" class="btn btn-primary" value="Enregistrer la mission"></div>
                                     
                                 </div>
                             </div>

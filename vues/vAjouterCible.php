@@ -66,7 +66,7 @@
                                     <div class="col-md-12">
                                         <br>
                                     </div>
-                                    <div class="col-md-12"><input type="submit" class="btn btn-primary" value="Enregistrer l'agent"></div>
+                                    <div class="col-md-12"><input type="submit" class="btn btn-primary" value="Enregistrer la cible"></div>
                                     
                                 </div>
                             </div>
