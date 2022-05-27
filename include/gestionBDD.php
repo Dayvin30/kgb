@@ -311,7 +311,7 @@ function ModifierMissions($Titre, $Description, $Code_name, $Pays, $TypeMission,
         
         
         
-        $requete='delete from agents where codes = :id;'; 
+        $requete='delete from planques where codes = :id;'; 
         echo($requete);
         
         
