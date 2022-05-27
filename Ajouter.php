@@ -10,7 +10,7 @@ if(1==1){
 
 if($_GET['type'] == "un agent")
 {
-    include('vues/vAjouter.php');
+    include('vues/vAjouterAgent.php');
     if(isset($_POST['Nom']) && isset($_POST['Prenom']) && isset($_POST['id_code']) && isset($_POST['Birthday']) && isset($_POST['Nationalite']) && isset($_POST['Specialite']))  //tous les champs sont remplis
         {
 
