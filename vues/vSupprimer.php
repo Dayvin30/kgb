@@ -41,7 +41,7 @@
                                     <div class="col-md-12">
                                         <br>
                                     </div>
-                                    <div class="col-md-12"><input type="submit" class="btn btn-primary" value="Connexion"></div>
+                                    <div class="col-md-12"><input type="submit" class="btn btn-danger" value="Supprimer"></div>
                                     
                                 </div>
                             </div>
