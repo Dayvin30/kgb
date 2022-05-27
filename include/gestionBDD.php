@@ -638,7 +638,7 @@ function ModifierMissions($Titre, $Description, $Code_name, $Pays, $TypeMission,
 
    function ajouterMissions($titre, $description, $code_name, $pays, $type_de_mission, $statut, $specialite, $date_debut, $date_fin, $id_agents, $contacts, $cibles, $planques)
    
-     try{
+  
     $connexion=connexionBDD();
 
     $requete='select * from missions where titre="'.$titre.'" ';
@@ -671,11 +671,7 @@ function ModifierMissions($Titre, $Description, $Code_name, $Pays, $TypeMission,
         ));
      
         
-      }
-      catch(Exception $e) {
-        echo 'Exception -> ';
-        var_dump($e->getMessage());
-    }
+     
       
    }
 
