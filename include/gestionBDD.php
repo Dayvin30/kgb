@@ -576,7 +576,7 @@ function ModifierMissions($Titre, $Description, $Code_name, $Pays, $TypeMission,
         'titre' => $titre, 
         'description' => $description, 
         'code_name' => $code_name,
-        'pays' => $pays
+        'pays' => $pays,
         'type_de_mission' => $type_de_mission,
         'statut' => $statut,
         'specialite' => $specialite,
