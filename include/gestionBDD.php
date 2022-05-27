@@ -560,7 +560,7 @@ function ModifierMissions($Titre, $Description, $Code_name, $Pays, $TypeMission,
    {
     $connexion=connexionBDD();
 
-    $requete='select * from mission where titre="'.$titre.'" ';
+    $requete='select * from missions where titre="'.$titre.'" ';
   
   
     $reponse=$connexion->query($requete);
