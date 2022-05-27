@@ -16,14 +16,14 @@ if(isset($_POST['id']) )
 
     if($_GET['type']=='un agent')
     {
-        SupprimerFromTable($_POST['id']);
+        SupprimerAgent($_POST['id']);
     }
     if($_GET['type']=='une cible') {
 
         
         
         
-            SupprimerFromTable("cibles", "nom_de_code", $_POST['id']);
+        SupprimerCible("cibles", "nom_de_code", $_POST['id']);
         }
 
         if($_GET['type']=='un contact') {
@@ -31,7 +31,7 @@ if(isset($_POST['id']) )
         
         
         
-            SupprimerFromTable("contacts", "code_name", $_POST['id']);
+            SupprimerContact("contacts", "code_name", $_POST['id']);
         }
 
         if($_GET['type']=='une mission') {
@@ -39,7 +39,7 @@ if(isset($_POST['id']) )
         
         
         
-            SupprimerFromTable("missions", "titre", $_POST['id']);
+            SupprimerMission("missions", "titre", $_POST['id']);
         }
 
 

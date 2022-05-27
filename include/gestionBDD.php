@@ -244,7 +244,7 @@ function ModifierMissions($Titre, $Description, $Code_name, $Pays, $TypeMission,
         }
 
 
-        function SupprimerFromTable($id)
+        function SupprimerAgent($id)
         {
         
           $connexion=connexionBDD();
@@ -252,6 +252,86 @@ function ModifierMissions($Titre, $Description, $Code_name, $Pays, $TypeMission,
         
         
         $requete='delete from agents where id_code = :id;'; 
+        echo($requete);
+        
+        
+        $reponse=$connexion->prepare($requete);
+        $reponse->execute(array(
+
+          'id' => $id
+        
+        ));
+        
+         }
+
+         function SupprimerCible($id)
+        {
+        
+          $connexion=connexionBDD();
+        
+        
+        
+        $requete='delete from cibles where nom_de_code = :id;'; 
+        echo($requete);
+        
+        
+        $reponse=$connexion->prepare($requete);
+        $reponse->execute(array(
+
+          'id' => $id
+        
+        ));
+        
+         }
+         
+         function SupprimerMission($id)
+        {
+        
+          $connexion=connexionBDD();
+        
+        
+        
+        $requete='delete from missions where titre = :id;'; 
+        echo($requete);
+        
+        
+        $reponse=$connexion->prepare($requete);
+        $reponse->execute(array(
+
+          'id' => $id
+        
+        ));
+        
+         }
+
+         function SupprimerPlanque($id)
+        {
+        
+          $connexion=connexionBDD();
+        
+        
+        
+        $requete='delete from agents where codes = :id;'; 
+        echo($requete);
+        
+        
+        $reponse=$connexion->prepare($requete);
+        $reponse->execute(array(
+
+          'id' => $id
+        
+        ));
+        
+         }
+
+         function SupprimerContact($id)
+        {
+        
+          $connexion=connexionBDD();
+        
+        
+        
+        $requete='delete from contacts where code_name = :id;'; 
         echo($requete);
         
         
