@@ -18,10 +18,10 @@
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Ajouter</a>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="Ajouter.php?type=un agent">Agent</a>
-            <a class="dropdown-item" href="ListerCibles.php?type=une cible">Cible</a>
-            <a class="dropdown-item" href="ListerContacts.php?type=un contact">Contact</a>
-            <a class="dropdown-item" href="ListerMissions.php?type=une mission">Mission</a>
-            <a class="dropdown-item" href="ListerPlanques.php?type=une planque">Planques</a>
+            <a class="dropdown-item" href="Ajouter.php?type=une cible">Cible</a>
+            <a class="dropdown-item" href="Ajouter.php?type=un contact">Contact</a>
+            <a class="dropdown-item" href="Ajouter.php?type=une mission">Mission</a>
+            <a class="dropdown-item" href="Ajouter.php?type=une planque">Planques</a>
             </li> 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Lister et modifier</a>

@@ -4,12 +4,13 @@ header("Content-Type: text/html;charset=utf-8");
 session_start();
 if(1==1){
     include('include/gestionBDD.php');
-    include('vues/vAjouter.php');
+    
   
 
 
 if($_GET['type'] == "un agent")
 {
+    include('vues/vAjouter.php');
     if(isset($_POST['Nom']) && isset($_POST['Prenom']) && isset($_POST['id_code']) && isset($_POST['Birthday']) && isset($_POST['Nationalite']) && isset($_POST['Specialite']))  //tous les champs sont remplis
         {
 
