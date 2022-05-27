@@ -17,13 +17,14 @@ if(isset($_POST['id']) )
     if($_GET['type']=='un agent')
     {
         SupprimerFromTable("agents", "id_code", $_POST['id']);
+        echo($_POST['id']);
     }
     if($_GET['type']=='une cible') {
 
         
         
         
-            SupprimerFromTable('55555');
+            SupprimerFromTable("cibles", "nom_de_code", $_POST['id']);
         }
 
         if($_GET['type']=='un contact') {
