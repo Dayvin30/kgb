@@ -14,7 +14,7 @@ include('include/gestionBDD.php');
 
   if($login)
   {
-    header('Location: accueil.php');
+    header('Location: Accueil.php');
     $_SESSION['email']=$_POST['email'];
     $_SESSION['mdp']=$_POST['password'];
     $_SESSION['role']="admin";
