@@ -23,7 +23,7 @@ if(isset($_POST['id']) )
         
         
         
-            SupprimerFromTable("cibles", "nom_de_code", $_POST['id']);
+            SupprimerFromTable($_POST['id']);
         }
 
         if($_GET['type']=='un contact') {
@@ -56,9 +56,7 @@ else{
     header('Location: Connexion.php');
 
 }
-if(isset($_SESSION['msg'])){
-    echo $_SESSION["msg"];
-    }
+
 
 ?>
 
