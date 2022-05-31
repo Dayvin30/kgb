@@ -24,7 +24,7 @@
 
 
 
-<form id="contactForm" action="#" method="post" >
+<form id="contactForm"  method="post" >
 <div class="container"> <div class=" text-center mt-5 ">
         <h1>Ajouter une mission</h1>
     </div>
@@ -38,7 +38,7 @@
                                 <div class="row">
 
                                 <div class="col-md-6">
-                                        <div class="form-group"> <label for="form_lastname">Titre</label> <input  id="form_lastname" type="text" name="Titre" class="form-control" placeholder="Saisissez un titre..."   required="required" data-error="Lastname is required."> </div>
+                                        <div class="form-group"> <label for="form_lastname">Titre</label> <input  id="form_lastname" type="text" name='Titre' class="form-control" placeholder="Saisissez un titre..."   required="required" data-error="Lastname is required."> </div>
                                     </div>
 
                                     <div class="col-md-6">
@@ -71,7 +71,7 @@
                                         <div class="form-group"> <label for="form_lastname">Date de fin</label> <input  id="form_lastname" type="text" name="DateFin" class="form-control" placeholder="Date de fin..." required="required" data-error="Lastname is required."> </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="form-group"> <label for="form_lastname">Agent</label> <input  id="Agent" type="text" name="Statut" class="form-control" placeholder="Saisissez un agent..." required="required" data-error="Lastname is required."> </div>
+                                        <div class="form-group"> <label for="form_lastname">Agent</label> <input  id="Agent" type="text" name="Agent" class="form-control" placeholder="Saisissez un agent..." required="required" data-error="Lastname is required."> </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group"> <label for="form_lastname">Contact</label> <input  id="form_lastname" type="text" name="Contact" class="form-control" placeholder="Saisissez un contact..." required="required" data-error="Lastname is required."> </div>
